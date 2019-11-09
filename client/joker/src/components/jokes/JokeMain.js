@@ -41,7 +41,7 @@ class JokeMain extends Component {
     }
 
     async getJoke(){
-        const URL = `https://sv443.net/jokeapi/category/${this.state.selectedCategory}`
+        const URL = `https://sv443.net/jokeapi/category/${this.state.selectedCategory}?blacklistFlags=nsfw`
         let retrievedJoke = await axios.get(URL)
         this.setState({
             joke: retrievedJoke.data,
